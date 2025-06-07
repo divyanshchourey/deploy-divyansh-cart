@@ -66,7 +66,7 @@ function Home() {
 
   const resetQuantity= () => {
     let newProductList=[...productList];
-    newProductList.map((products)=>{
+    newProductList.forEach((products)=>{
       products.quantity=0
     })
     setProductList(newProductList);
