@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+.payment-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+}
+
+.payment-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.payment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.payment-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.payment-icon {
+    font-size: 2rem;
+    color: #4facfe;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4facfe;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group textarea + label {
+    top: 25px;
+    transform: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    padding: 0 5px;
+    background: #1a1a2e;
+}
+
+.input-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.input-group input:focus ~ .input-line,
+.input-group textarea:focus ~ .input-line {
+    transform: scaleX(1);
+}
+
+.gender-label {
+    display: block;
+    color: #4facfe;
+    margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.gender-options {
+    display: flex;
+    gap: 20px;
+}
+
+.gender-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gender-option input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4facfe;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.gender-option input[type="radio"]:checked {
+    background: #4facfe;
+}
+
+.gender-option input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #1a1a2e;
+    border-radius: 50%;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+.button-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.submit-button:hover .button-line {
+    transform: scaleX(1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'); 

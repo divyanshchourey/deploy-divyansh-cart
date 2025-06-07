@@ -1,5 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  color: #fff;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+  z-index: 1;
+}
+
+.App > * {
+  position: relative;
+  z-index: 2;
 }
 
 .App-logo {
@@ -34,5 +59,180 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.main-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  background: rgba(26, 26, 46, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.navbar-brand {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Form Controls */
+.form-control {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  padding: 15px !important;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #00f2fe, #4facfe) !important;
+  border: none !important;
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b) !important;
+  border: none !important;
+}
+
+.btn-success {
+  background: linear-gradient(45deg, #11998e, #38ef7d) !important;
+  border: none !important;
+}
+
+.btn-warning {
+  background: linear-gradient(45deg, #f7971e, #ffd200) !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Product List */
+.product-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.product-name {
+  font-family: 'Orbitron', sans-serif;
+  color: #4facfe;
+}
+
+.badge {
+  background: linear-gradient(45deg, #00f2fe, #4facfe) !important;
+  font-family: 'Orbitron', sans-serif;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+
+/* Footer */
+.fixed-bottom {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 15px 0;
+}
+
+.total-amount {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  color: #4facfe;
+}
+
+/* Empty Cart */
+.empty-cart {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  margin: 20px 0;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.empty-cart i {
+  font-size: 4rem;
+  color: #4facfe;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.empty-cart h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #4facfe;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.empty-cart p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
